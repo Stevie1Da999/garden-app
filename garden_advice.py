@@ -1,31 +1,31 @@
-# Ask the user what season and plant type they want advice for
+# This function gives advice depending on the season entered
+def get_season_advice(season):
+    if season == "summer":
+        return "Water your plants regularly and provide some shade."
+    elif season == "winter":
+        return "Protect your plants from frost with covers."
+    else:
+        return "No advice for this season."
+
+
+# This function gives advice depending on the plant type entered
+def get_plant_advice(plant_type):
+    if plant_type == "flower":
+        return "Use fertiliser to encourage blooms."
+    elif plant_type == "vegetable":
+        return "Keep an eye out for pests!"
+    else:
+        return "No advice for this type of plant."
+
+
+# Ask the user what they want gardening advice for
 season = input("Enter the season (summer or winter): ").lower()
 plant_type = input("Enter the plant type (flower or vegetable): ").lower()
 
-# Variable to hold gardening advice
-advice = ""
+# Get the advice from both functions
+season_advice = get_season_advice(season)
+plant_advice = get_plant_advice(plant_type)
 
-# Determine advice based on the season
-if season == "summer":
-    advice += "Water your plants regularly and provide some shade.\n"
-elif season == "winter":
-    advice += "Protect your plants from frost with covers.\n"
-else:
-    advice += "No advice for this season.\n"
-
-# Determine advice based on the plant type
-if plant_type == "flower":
-    advice += "Use fertiliser to encourage blooms."
-elif plant_type == "vegetable":
-    advice += "Keep an eye out for pests!"
-else:
-    advice += "No advice for this type of plant."
-
-# Print the generated advice
-print(advice)
-
-# TODO: Examples of possible features to add:
-# - Add detailed comments explaining each block of code.
-# - Refactor the code into functions for better readability and modularity.
-# - Store advice in a dictionary for multiple plants and seasons.
-# - Recommend plants based on the entered season.
+# Display the gardening advice
+print(season_advice)
+print(plant_advice)
